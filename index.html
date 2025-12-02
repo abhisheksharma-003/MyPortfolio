@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Modern & Minimal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap"
+        rel="stylesheet" >
+  <script type="module" crossorigin src="/MyPortfolio/assets/index-DfTMlczN.js"></script>
+  <link rel="stylesheet" crossorigin href="/MyPortfolio/assets/index-DumbXT4v.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Navbar -->
+        <nav class="fixed w-full z-50 py-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div
+                    class="flex items-center justify-between bg-white/80 backdrop-blur-md rounded-full px-6 py-3 shadow-sm border border-gray-200">
+                    <!-- Logo/Name -->
+                    <div class="flex-shrink-0">
+                        <span class="text-lg font-semibold text-gray-900 dark:text-gray-100">Abhishek Sharma</span>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#work" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">Work</a>
+                        <a href="#story" class="text-sm text-gray-600 hover:text-gray-900 transition-colors">Story</a>
+                        <a href="#captures"
+                            class="text-sm text-gray-600 hover:text-gray-900 transition-colors">Captures</a>
+                        <a href="#contact"
+                            class="text-sm text-gray-600 hover:text-gray-900 transition-colors">Contact</a>
+                    </div>
+
+                    <!-- Right Side: Time Badge + CTA -->
+                    <div class="hidden md:flex items-center space-x-4">
+                    <div id="weather-widget" class="flex items-center gap-2 text-xs bg-gray-100 px-3 py-1.5 rounded-full text-gray-600">
+                        <i data-lucide="cloud" class="w-4 h-4"></i>
+                        <span id="weather-temp">--°C</span>
+                    </div>
+                        <div class="text-xs bg-gray-100 px-3 py-1.5 rounded-full text-gray-600" id="time-badge">
+                            22:52 IST
+                        </div>
+                        <a href="#contact"
+                            class="text-sm bg-gray-900 text-white px-5 py-2 rounded-full hover:bg-gray-800 transition-colors">
+                            Get in Touch
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button type="button" id="mobile-menu-btn"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none">
+                            <i data-lucide="menu" class="h-6 w-6"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center pt-24 pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Left: Text Content -->
+                    <div class="space-y-6">
+                        <p id="dynamic-greeting" class="text-lg text-gray-600 dark:text-gray-400 font-medium">Good evening!</p>
+                        <h1 class="text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-gray-900 leading-tight">
+                            Hello, <br />
+                            <span class="font-sans font-light">I'm</span> <span class="italic">Abhishek Sharma</span>.
+                        </h1>
+                        <p class="text-xl text-gray-600 max-w-lg">
+                            A passionate designer & developer crafting beautiful digital experiences with attention to
+                            detail and a love for minimalism.
+                        </p>
+                    </div>
+
+                    <!-- Right: Polaroid + Sticky Note -->
+                    <div class="relative flex items-center justify-center">
+                        <!-- Polaroid Photo -->
+                        <div class="polaroid floating max-w-sm">
+                            <img src="/MyPortfolio/assets/me-zLgci7Cv.jpeg"
+                                alt="Profile" class="w-full h-auto rounded-sm">
+                            <p class="font-handwritten text-center mt-2 text-gray-700">me.jpeg</p>
+                        </div>
+
+                        <!-- Sticky Note -->
+                        <div class="sticky-note absolute -bottom-8 -left-8 max-w-[200px] animate-float-delayed">
+                            <p class="text-gray-800">Make it simple!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl font-serif font-bold text-gray-900 mb-4">Selected Work</h2>
+                    <p class="text-lg text-gray-600">A collection of projects I'm proud of</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="card-monochrome p-6 group">
+                        <div class="device-mockup mb-6 overflow-hidden">
+                            <div
+                                class="aspect-[9/16] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center">
+                                <span class="text-gray-400 text-sm">Project Preview</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-xl font-semibold text-gray-900">Project Alpha</h3>
+                                <span class="text-xs bg-gray-100 px-2 py-1 rounded-full text-gray-600">LIVE</span>
+                            </div>
+                            <p class="text-sm text-gray-600">A modern web application with clean design and smooth
+                                interactions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="card-monochrome p-6 group">
+                        <div class="device-mockup mb-6 overflow-hidden">
+                            <div
+                                class="aspect-[9/16] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center">
+                                <span class="text-gray-400 text-sm">Project Preview</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-xl font-semibold text-gray-900">Project Beta</h3>
+                                <span class="text-xs bg-yellow-100 px-2 py-1 rounded-full text-yellow-800">WORK IN
+                                    PROGRESS</span>
+                            </div>
+                            <p class="text-sm text-gray-600">An innovative solution for modern challenges.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="card-monochrome p-6 group">
+                        <div class="device-mockup mb-6 overflow-hidden">
+                            <div
+                                class="aspect-[9/16] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center">
+                                <span class="text-gray-400 text-sm">Project Preview</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-xl font-semibold text-gray-900">Project Gamma</h3>
+                                <span class="text-xs bg-pink-100 px-2 py-1 rounded-full text-pink-800">COMING
+                                    SOON</span>
+                            </div>
+                            <p class="text-sm text-gray-600">Something exciting is on the way.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story Section -->
+        <section id="story" class="py-20">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl font-serif font-bold text-gray-900 mb-4">My Story</h2>
+                    <p class="text-lg text-gray-600">A brief journey through my career</p>
+                </div>
+
+                <!-- Timeline -->
+                <div class="space-y-12">
+                    <!-- Timeline Item 1 -->
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-24 text-right">
+                            <span class="text-sm font-semibold text-gray-900">2024</span>
+                        </div>
+                        <div class="flex-shrink-0 w-px h-full bg-gray-300"></div>
+                        <div class="flex-1 pb-8">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Current Role</h3>
+                            <p class="text-gray-600">Working on exciting projects and continuously learning new
+                                technologies.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-24 text-right">
+                            <span class="text-sm font-semibold text-gray-900">2023</span>
+                        </div>
+                        <div class="flex-shrink-0 w-px h-full bg-gray-300"></div>
+                        <div class="flex-1 pb-8">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Major Milestone</h3>
+                            <p class="text-gray-600">Achieved significant growth in design and development skills.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="flex gap-6 items-start">
+                        <div class="flex-shrink-0 w-24 text-right">
+                            <span class="text-sm font-semibold text-gray-900">2022</span>
+                        </div>
+                        <div class="flex-shrink-0 w-px h-full bg-gray-300"></div>
+                        <div class="flex-1 pb-8">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">The Beginning</h3>
+                            <p class="text-gray-600">Started my journey in web development and design.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Captures Section -->
+        <section id="captures" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-5xl font-serif font-bold text-gray-900 mb-4">Captures</h2>
+                    <p class="text-lg text-gray-600">Moments & inspirations</p>
+                </div>
+
+                <!-- Photo Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- Grid Items -->
+                    <div
+                        class="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div
+                        class="aspect-square bg-gradient-to-br from-gray-300 to-gray-200 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div
+                        class="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div
+                        class="aspect-square bg-gradient-to-br from-gray-300 to-gray-200 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div
+                        class="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div
+                        class="aspect-square bg-gradient-to-br from-gray-300 to-gray-200 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div
+                        class="aspect-square bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div
+                        class="aspect-square bg-gradient-to-br from-gray-300 to-gray-200 rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-5xl font-serif font-bold text-gray-900 mb-6">Let's Connect</h2>
+                <p class="text-xl text-gray-600 mb-12">
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+                    vision.
+                </p>
+                <a href="mailto:iabhisheksharma.003@gmail.com"
+                    class="inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors text-lg font-medium">
+                    Get in Touch
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-sm text-gray-600">© 2026 Portfolio. Crafted with care ❤️.</p>
+                    <div class="flex space-x-6">
+                        <a href="https://github.com/abhisheksharma003" class="text-gray-600 hover:text-gray-900 transition-colors">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/abhisheksharma003/" class="text-gray-600 hover:text-gray-900 transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
