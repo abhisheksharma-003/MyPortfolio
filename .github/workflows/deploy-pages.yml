@@ -1,9 +1,7 @@
-name: Build and deploy to GitHub Pages
+name: Build and deploy to gh-pages (JamesIves v4)
 
-# Permissions needed to build artifacts and deploy Pages
 permissions:
-  contents: read
-  pages: write
+  contents: write        # needed to push to gh-pages branch
   id-token: write
 
 on:
@@ -13,11 +11,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-upload:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # persist-credentials allows the action to push using GITHUB_TOKEN
+          persist-credentials: true
 
       - name: Use Node.js
         uses: actions/setup-node@v4
@@ -31,15 +32,16 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Upload Pages artifact
-        # For GitHub Pages, use the dedicated upload-pages-artifact action (not upload-artifact@v3)
-        uses: actions/upload-pages-artifact@v1
+      - name: Deploy to gh-pages (JamesIves v4)
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: ./build
-
-  deploy:
-    needs: build-and-upload
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+          # branch to deploy to (gh-pages is common)
+          branch: gh-pages
+          # folder produced by your build step (change to `dist` if needed)
+          folder: build
+          # remove existing files before deploying
+          clean: true
+          # commit message
+          commit-message: "chore: deploy site to gh-pages (action v4)"
+          # token defaults to GITHUB_TOKEN if not set; explicit is fine:
+          token: ${{ secrets.GITHUB_TOKEN }}
