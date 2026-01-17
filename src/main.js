@@ -196,10 +196,7 @@ document.querySelectorAll('.card-monochrome').forEach(card => {
     cardObserver.observe(card);
 });
 
-// Also observe captures grid items
-document.querySelectorAll('#captures .grid > div').forEach(item => {
-    cardObserver.observe(item);
-});
+
 
 // ===== RIPPLE EFFECT =====
 function createRipple(event) {
@@ -279,7 +276,7 @@ sr.reveal('.polaroid', { origin: 'right', delay: 400 });
 sr.reveal('.sticky-note', { origin: 'bottom', delay: 600 });
 sr.reveal('.card-monochrome', { interval: 150 });
 sr.reveal('#story .flex', { interval: 200 });
-sr.reveal('#captures .grid > div', { interval: 100 });
+
 
 // ===== LIVE TIME BADGE =====
 function updateTime() {
@@ -303,14 +300,16 @@ const mobileMenu = document.createElement('div');
 mobileMenu.className = 'md:hidden hidden bg-white/95 backdrop-blur-md mt-4 rounded-2xl border border-gray-200 overflow-hidden';
 mobileMenu.innerHTML = `
   <div class="px-4 py-4 space-y-2">
-    <a href="#work" class="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">Work</a>
-    <a href="#story" class="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">Story</a>
-    <a href="#captures" class="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">Captures</a>
+    <a href="#education" class="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">Education</a>
+    <a href="#work" class="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">Projects</a>
+    <a href="#skills" class="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">Skills</a>
+    <a href="#experience" class="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">Experience</a>
     <a href="#contact" class="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors">Contact</a>
     <div class="pt-2 border-t border-gray-200">
       <a href="#contact" class="block px-4 py-2 bg-gray-900 text-white text-center rounded-lg hover:bg-gray-800 transition-colors">Get in Touch</a>
     </div>
   </div>
+
 `;
 
 const navContainerParent = document.querySelector('nav > div');
@@ -342,5 +341,84 @@ mobileMenu.querySelectorAll('a').forEach(link => {
         }
     });
 });
+
+// ===== INTERACTIVE SKILLS SECTION =====
+const skillsData = {
+    frontend: {
+        title: "Frontend Skills",
+        desc: "Comfortable building simple, responsive UI components.",
+        skills: ["HTML5", "CSS3", "JavaScript", "React", "Tailwind CSS"]
+    },
+    backend: {
+        title: "Backend Skills",
+        desc: "Built simple APIs and backend logic for small projects.",
+        skills: ["Python", "FastAPI", "REST APIs", "SQLite & Alchemy", "Authentication", "JSON & HTTP concepts"]
+    },
+    "data-analysis": {
+        title: "Data Analysis Skills",
+        desc: "Analyzing data sets to find trends and insights.",
+        skills: ["Python", "NumPy", "Pandas", "Matplotlib", "Data Cleaning", "Exploratory Data Analysis (EDA)", "Excel", "SQL", "Tableau", "PowerBI"]
+    },
+    "data-science": {
+        title: "Data Science Skills",
+        desc: "Applying statistical methods and machine learning concepts.",
+        skills: ["Statistics", "Probability", "Machine Learning (Currently Learning)"]
+    },
+    "gen-ai": {
+        title: "GenAI Skills",
+        desc: "Exploring the potential of Large Language Models.",
+        skills: ["Prompt Engineering", "GenAI Tools", "API Integration", "LangChain (Currently Learning)"]
+    }
+};
+
+function initSkills() {
+    const buttons = document.querySelectorAll('.skill-btn');
+    const container = document.getElementById('skills-container');
+
+    if (!container) return;
+
+    function renderSkills(category) {
+        const data = skillsData[category];
+        if (!data) return;
+
+        // Clear and rebuild with animation
+        container.style.opacity = '0';
+
+        setTimeout(() => {
+            container.innerHTML = `
+                <div class="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm text-center">
+                    <h3 class="text-2xl font-serif font-bold text-gray-900 mb-2">${data.title}</h3>
+                    <p class="text-gray-500 mb-8 max-w-lg mx-auto">${data.desc}</p>
+                    <div class="flex flex-wrap justify-center gap-3">
+                        ${data.skills.map((skill, index) => `
+                            <span class="skill-chip" style="animation-delay: ${index * 0.05}s">
+                                ${skill}
+                            </span>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            container.style.transition = 'opacity 0.3s ease';
+            container.style.opacity = '1';
+        }, 200);
+    }
+
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update Active State
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Render Content
+            const category = btn.getAttribute('data-category');
+            renderSkills(category);
+        });
+    });
+
+    // Initial Render
+    renderSkills('frontend');
+}
+
+initSkills();
 
 console.log('Portfolio initialized - All features loaded! ✨');
