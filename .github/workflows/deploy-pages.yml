@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  build-and-upload:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -32,12 +32,13 @@ jobs:
         run: npm run build
 
       - name: Upload Pages artifact
+        # For GitHub Pages, use the dedicated upload-pages-artifact action (not upload-artifact@v3)
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./build
 
   deploy:
-    needs: build-and-deploy
+    needs: build-and-upload
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
