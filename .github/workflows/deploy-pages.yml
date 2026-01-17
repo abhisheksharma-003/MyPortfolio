@@ -38,7 +38,7 @@ jobs:
           # branch to deploy to (gh-pages is common)
           branch: gh-pages
           # folder produced by your build step (change to `dist` if needed)
-          folder: build
+          folder: dist
           # remove existing files before deploying
           clean: true
           # commit message
